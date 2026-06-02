@@ -1,4 +1,4 @@
-# 👋 Portfólio Analytics
+# Portfólio Analytics
 
 ## Analista de Dados | BI | Engenharia de Dados | Automação de Processos
 
