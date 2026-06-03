@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { useTheme } from "@/hooks/useTheme.tsx";
+
 
 export default function Navbar() {
+
+  const {theme, toggleTheme} = useTheme();
+
   return (
     <nav className="flex bg-gray-800
-        p-8
+        p-6
         h-full
 
         bg-violet-800/15
@@ -24,10 +29,10 @@ export default function Navbar() {
         overflow-hidden justify-between">
 
       
-        <div className="pt-0.5">
+        <div >
           <Link to="/" className=" flex text-xl font-bold">
-          <img src="/favicon.svg" className="w-8 h-8"></img>  
-          <h3 className="mx-4 my-auto text-white">Lucas Barcellos</h3>
+          <img src="/favicon.svg" className="w-10 h-10"></img>  
+          <h3 className="mx-4 my-auto text-foreground">Lucas Barcellos</h3>
           </Link>
         </div>
 
@@ -53,24 +58,30 @@ export default function Navbar() {
   
         <div className="">
           <div className="flex gap-4 justify-between">
-            <a 
-              href="https://linkedin.com/in/lucas-daniel-alves-barcellos/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 my-auto hover:text-blue-400 transition-colors text-2xl"
-              aria-label="LinkedIn"
+            <button
+              onClick={toggleTheme}
+              className={`
+                relative flex h-8 w-16 items-center rounded-full
+                transition-all duration-300 cursor-pointer
+                ${theme === "dark"
+                  ? "bg-violet-600"
+                  : "bg-violet-200"}
+              `}
+              aria-label="Alternar tema"
             >
-              <FaLinkedin />
-            </a>
-            <a 
-              href="https://github.com/seu-usuario" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 my-auto hover:text-blue-400 transition-colors text-2xl"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </a>
+              <span
+                className={`
+                  absolute flex h-6 w-6 items-center justify-center
+                  rounded-full bg-white shadow-md
+                  transition-all duration-300
+                  ${theme === "dark"
+                    ? "translate-x-9"
+                    : "translate-x-1"}
+                `}
+              >
+                {theme === "dark" ? "🌙" : "☀️"}
+              </span>
+            </button>
             <button className="hover:bg-white hover:text-violet-700 p-1.5 rounded-sm my-auto hover:cursor-pointer bg-violet-600 text-white font-semibold">Entre em Contato</button>
           </div>
       </div>

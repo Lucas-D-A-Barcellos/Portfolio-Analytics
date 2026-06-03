@@ -19,7 +19,8 @@ export default function Skills() {
   return (
   <div className="
         mx-auto
-        p-8
+        px-8
+        pt-5
         h-full
 
         bg-white/10
@@ -44,7 +45,7 @@ export default function Skills() {
       "
     >
 
-    <h2 className="pb-2 scroll-pt-0.5 font-bold !text-white">
+    <h2 className=" text-center mb-4 font-bold text-foreground">
         Skills
     </h2>
 
@@ -52,7 +53,8 @@ export default function Skills() {
 
         <div className="
         mx-auto
-        p-2
+        mb-5
+        p-4
         h-full
 
         bg-violet-800/20
@@ -72,11 +74,11 @@ export default function Skills() {
         relative
         overflow-hidden
       ">
-        <h3 className="font-bold text-shadow-2xl text-shadow-violet-900 text-violet-100 mb-3">
+        <h3 className=" text-2xl text-center font-bold text-shadow-2xl text-shadow-violet-900 text-[#4c1d95] mb-3">
             Data & BI
         </h3>
 
-        <ul className="grid text-white grid-cols-4 gap-5 items-center">
+        <ul className="grid text-foreground grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-5 items-center text-center">
             <li className="font-semibold"><img src={Bi} className="h-12 mx-auto"></img>Power BI</li>
             <li className="font-semibold"><img src={dax} className="h-12 mx-auto"></img>Dax Studio</li>
             <li className="font-semibold"><img src={sql} className="h-12 mx-auto"></img>SQL</li>
@@ -88,7 +90,8 @@ export default function Skills() {
 
         <div className="
         mx-auto
-        p-3
+        my-8
+        p-4
         h-full
 
         bg-violet-800/20
@@ -108,10 +111,10 @@ export default function Skills() {
         relative
         overflow-hidden
       ">
-        <h3 className="font-semibold text-violet-200 text-shadow-violet-700 text-shadow-2xs mb-3">
+        <h3 className="text-2xl text-center font-bold text-shadow-2 text-shadow-white text-[#4c1d95] mb-3">
             Databases
         </h3>
-        <ul className="grid text-white grid-cols-4 gap-5">
+        <ul className="grid text-foreground grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-5 text-center">
             <li className="font-semibold"><img src={sqlserver} className="h-12 mx-auto"></img>SQL Server</li>
             <li className="font-semibold"><img src={oracle} className="h-12 mx-auto"></img>Oracle</li>
             <li className="font-semibold"><img src={mysql} className="h-12 mx-auto"></img> MySQL</li>
@@ -121,7 +124,8 @@ export default function Skills() {
 
         <div className="
         mx-auto
-        p-3
+        my-8
+        p-4
         h-full
 
         bg-violet-800/20
@@ -141,11 +145,11 @@ export default function Skills() {
         relative
         overflow-hidden
       ">
-        <h3 className="font-semibold text-violet-200 text-shadow-violet-700 text-shadow-2xs mb-3">
+        <h3 className="text-2xl text-center font-bold text-shadow-2xl text-shadow-violet-900 text-violet-100 mb-5">
             Programming
         </h3>
 
-        <ul className="text-white grid grid-cols-4 gap-5">
+        <ul className="text-foreground grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3  gap-5 text-center">
             <li className="font-semibold"><img src={python} className="h-12 mx-auto"></img>Python</li>
             <li className="font-semibold"><img src={java} className="h-12 mx-auto"></img>java</li>
             <li className="font-semibold"><img src={javascript} className="h-12 mx-auto"></img>javascript</li>

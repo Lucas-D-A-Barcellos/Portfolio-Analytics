@@ -26,7 +26,7 @@ export default function Projects() {
         overflow-hidden
     ">
 
-    <h2 className="text-3xl font-bold mb-6 !text-white">
+    <h2 className="text-3xl font-bold mb-6 text-foreground text-center">
         PROJETOS
     </h2>
 

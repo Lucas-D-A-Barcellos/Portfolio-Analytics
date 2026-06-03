@@ -63,7 +63,7 @@ export default function About() {
           "
         />
 
-        <h2 className="text-3xl font-bold text-white mb-2">
+        <h2 className="text-3xl font-bold text-foreground mb-2">
           Lucas Barcellos
         </h2>
 
@@ -77,13 +77,13 @@ export default function About() {
           Analista de Dados • BI • Engenharia de Dados
         </span>
 
-        <p className="mt-4 pt-1 text-gray-100 leading-8 text-justify">
+        <p className="mt-4 pt-1 text-foreground leading-8 text-justify">
           Sou Analista e Engenheiro de Dados apaixonado por tecnologia, automação e soluções orientadas a dados. Possuo experiência em Business Intelligence, Engenharia de Dados e desenvolvimento de aplicações, atuando na criação de dashboards, pipelines ETL, integrações de sistemas e processos de automação que transformam dados em informações estratégicas para o negócio.
         </p>
-        <p className="mt-6 pt-4 text-gray-100 leading-8 text-justify">
+        <p className="mt-6 pt-4 text-foreground leading-8 text-justify">
           Trabalhei com ferramentas como Power BI, SQL Server, Oracle, Python, Power Apps e Power Automate, participando de projetos de análise, migração e integração de dados, além da otimização de processos corporativos. Busco sempre unir visão de negócio e conhecimento técnico para entregar soluções eficientes, escaláveis e de alto impacto.
         </p>
-        <p className="mt-6 pt-4 text-gray-100 leading-8 text-justify">
+        <p className="mt-6 pt-4 text-foreground leading-8 text-justify">
           Atualmente, direciono meus estudos para Engenharia e Ciência de Dados, Inteligência Artificial, com o objetivo de construir soluções cada vez mais inteligentes, modernas e orientadas à inovação. Esta página reúne alguns dos projetos, tecnologias e experiências que fazem parte dessa jornada profissional.
         </p>
       </div>
