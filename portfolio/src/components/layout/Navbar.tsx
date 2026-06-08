@@ -1,89 +1,156 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "@/hooks/useTheme.tsx";
-
+import { useState } from "react";
 
 export default function Navbar() {
-
-  const {theme, toggleTheme} = useTheme();
+  const { theme, toggleTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="flex bg-gray-800
-        p-6
-        h-full
+    <nav
+      className="
+      relative
+      flex
+      justify-between
+      items-center
+      p-4 md:p-6
 
-        bg-violet-800/15
-        backdrop-blur-2xl
+      bg-violet-800/15
+      backdrop-blur-2xl
 
-        border
-        border-white/20
+      border border-white/20
+      shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+      z-50
+    "
+    >
+      {/* Logo */}
+      <Link to="/" className="flex items-center">
+        <img src="/favicon.svg" className="w-10 h-10" />
+        <h3 className="hidden md:block mx-4 text-foreground text-xl font-bold">
+          Lucas Barcellos
+        </h3>
+      </Link>
 
-        shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+      {/* Desktop */}
+      <div className="hidden md:flex items-center gap-8">
+        <ul className="flex gap-6">
+          <li>
+            <Link
+              to="/"
+              className="bg-violet-700 text-white px-3 py-1 rounded-sm font-semibold hover:bg-white hover:text-violet-700 transition-all"
+            >
+              Home
+            </Link>
+          </li>
 
-        
+          <li>
+            <Link
+              to="/projetos"
+              className="bg-violet-700 text-white px-3 py-1 rounded-sm font-semibold hover:bg-white hover:text-violet-700 transition-all"
+            >
+              Projetos
+            </Link>
+          </li>
 
-        transition-all
-        duration-500
+          <li>
+            <Link
+              to="/sobre"
+              className="bg-violet-700 text-white px-3 py-1 rounded-sm font-semibold hover:bg-white hover:text-violet-700 transition-all"
+            >
+              Sobre
+            </Link>
+          </li>
+        </ul>
 
-        relative
-        overflow-hidden justify-between">
+        <button
+          onClick={toggleTheme}
+          className={`relative flex h-8 w-16 items-center rounded-full transition-all duration-300 ${
+            theme === "dark" ? "bg-violet-600" : "bg-violet-200"
+          }`}
+        >
+          <span
+            className={`absolute flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md transition-all duration-300 ${
+              theme === "dark"
+                ? "translate-x-9"
+                : "translate-x-1"
+            }`}
+          >
+            {theme === "dark" ? "🌙" : "☀️"}
+          </span>
+        </button>
+      </div>
 
-      
-        <div >
-          <Link to="/" className=" flex text-xl font-bold">
-          <img src="/favicon.svg" className="w-10 h-10"></img>  
-          <h3 className="mx-4 my-auto text-foreground">Lucas Barcellos</h3>
-          </Link>
-        </div>
+      {/* Mobile */}
+      <div className="flex items-center gap-3 md:hidden">
+        <button
+          onClick={toggleTheme}
+          className={`relative flex h-8 w-16 items-center rounded-full transition-all duration-300 ${
+            theme === "dark" ? "bg-violet-600" : "bg-violet-200"
+          }`}
+        >
+          <span
+            className={`absolute flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md transition-all duration-300 ${
+              theme === "dark"
+                ? "translate-x-9"
+                : "translate-x-1"
+            }`}
+          >
+            {theme === "dark" ? "🌙" : "☀️"}
+          </span>
+        </button>
 
-        <div className="pt-1.5">
-          <ul className="flex flex-row items-center gap-10">
-            <li >
-              <Link to="/" className="transition-all duration-300 ease-in-out hover:bg-white hover:text-violet-700 bg-violet-700 p-1 text-white my-auto rounded-sm px-2 font-semibold">
-                Home
-              </Link>
-            </li>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-2xl text-foreground hover:cursor-pointer hover:scale-105"
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Dropdown Mobile */}
+      {menuOpen && (
+        <div
+          className="
+          absolute
+          top-full
+          right-4
+          mt-2
+          w-48
+
+          rounded-lg
+          border border-white/20
+
+          bg-background
+          backdrop-blur-xl
+
+          shadow-lg
+          z-50
+        "
+        >
+          <ul className="flex flex-col p-3 gap-2">
+
             <li>
-              <Link to="/projetos" className="hover:bg-white hover:text-violet-700 text-white bg-violet-700 p-1 transition-colors my-auto rounded-sm px-2 font-semibold">
+              <Link
+                to="/projetos"
+                onClick={() => setMenuOpen(false)}
+                className="block p-2 rounded hover:bg-violet-700"
+              >
                 Projetos
               </Link>
             </li>
+
             <li>
-              <Link to="/sobre" className="hover:bg-white hover:text-violet-700 text-white bg-violet-700 p-1 transition-colors my-auto rounded-sm px-2 font-semibold">
-                Sobre
+              <Link
+                to="/sobre"
+                onClick={() => setMenuOpen(false)}
+                className="block p-2 rounded hover:bg-violet-700"
+              >
+                Contatos
               </Link>
             </li>
           </ul>
         </div>
-  
-        <div className="">
-          <div className="flex gap-4 justify-between">
-            <button
-              onClick={toggleTheme}
-              className={`
-                relative flex h-8 w-16 items-center rounded-full
-                transition-all duration-300 cursor-pointer
-                ${theme === "dark"
-                  ? "bg-violet-600"
-                  : "bg-violet-200"}
-              `}
-              aria-label="Alternar tema"
-            >
-              <span
-                className={`
-                  absolute flex h-6 w-6 items-center justify-center
-                  rounded-full bg-white shadow-md
-                  transition-all duration-300
-                  ${theme === "dark"
-                    ? "translate-x-9"
-                    : "translate-x-1"}
-                `}
-              >
-                {theme === "dark" ? "🌙" : "☀️"}
-              </span>
-            </button>
-            <button className="hover:bg-white hover:text-violet-700 p-1.5 rounded-sm my-auto hover:cursor-pointer bg-violet-600 text-white font-semibold">Entre em Contato</button>
-          </div>
-      </div>
+      )}
     </nav>
-  )
+  );
 }

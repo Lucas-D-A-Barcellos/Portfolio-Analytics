@@ -24,7 +24,7 @@ export default function Layout() {
       </div>
 
       {/* CONTEÚDO */}
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative flex flex-col min-h-screen">
         <Navbar />
 
         <main className="flex-1 container mx-auto px-4 py-5">
