@@ -132,7 +132,12 @@ export default function Navbar() {
             <li>
               <a
                 href="#projetos"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => {
+                  document.getElementById("projetos")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                  setMenuOpen(false);
+                }} 
                 className="block p-2 rounded hover:bg-violet-700 hover:text-white"
               >
                 Projetos
@@ -142,7 +147,12 @@ export default function Navbar() {
             <li>
               <a
                 href="#contato"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => {
+                  document.getElementById("contato")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                  setMenuOpen(false);
+                }}
                 className="block p-2 rounded hover:bg-violet-700 hover:text-white"
               >
                 Contatos
