@@ -74,7 +74,7 @@ export default function Skills() {
         relative
         overflow-hidden
       ">
-        <h3 className=" text-2xl text-center font-bold text-shadow-2xl text-shadow-violet-900 text-[#4c1d95] mb-3">
+        <h3 className=" text-2xl text-center font-bold text-shadow-2xl text-foreground mb-3">
             Data & BI
         </h3>
 
@@ -111,7 +111,7 @@ export default function Skills() {
         relative
         overflow-hidden
       ">
-        <h3 className="text-2xl text-center font-bold text-shadow-2 text-shadow-white text-[#4c1d95] mb-3">
+        <h3 className="text-2xl text-center font-bold text-shadow-2 text-shadow-white text-foreground mb-3">
             Databases
         </h3>
         <ul className="grid text-foreground grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-5 text-center">
@@ -145,7 +145,7 @@ export default function Skills() {
         relative
         overflow-hidden
       ">
-        <h3 className="text-2xl text-center font-bold text-shadow-2xl text-shadow-violet-900 text-violet-100 mb-5">
+        <h3 className="text-2xl text-center font-bold text-shadow-2xl text-foreground text-violet-100 mb-5">
             Programming
         </h3>
 

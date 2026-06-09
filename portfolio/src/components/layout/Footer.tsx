@@ -2,7 +2,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white mt-auto">
+    <footer id='contato' className="bg-black text-white mt-auto">
 
       {/* Conteúdo principal */}
       <div className="container mx-auto px-6 py-8">

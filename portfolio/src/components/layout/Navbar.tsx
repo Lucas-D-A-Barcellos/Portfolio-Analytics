@@ -130,23 +130,23 @@ export default function Navbar() {
           <ul className="flex flex-col p-3 gap-2">
 
             <li>
-              <Link
-                to="/projetos"
+              <a
+                href="#projetos"
                 onClick={() => setMenuOpen(false)}
-                className="block p-2 rounded hover:bg-violet-700"
+                className="block p-2 rounded hover:bg-violet-700 hover:text-white"
               >
                 Projetos
-              </Link>
+              </a>
             </li>
 
             <li>
-              <Link
-                to="/sobre"
+              <a
+                href="#contato"
                 onClick={() => setMenuOpen(false)}
-                className="block p-2 rounded hover:bg-violet-700"
+                className="block p-2 rounded hover:bg-violet-700 hover:text-white"
               >
                 Contatos
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
