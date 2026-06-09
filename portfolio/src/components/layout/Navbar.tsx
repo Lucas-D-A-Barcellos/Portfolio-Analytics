@@ -34,31 +34,31 @@ export default function Navbar() {
       {/* Desktop */}
       <div className="hidden md:flex items-center gap-8">
         <ul className="flex gap-6">
-          <li>
-            <Link
-              to="/"
-              className="bg-violet-700 text-white px-3 py-1 rounded-sm font-semibold hover:bg-white hover:text-violet-700 transition-all"
-            >
-              Home
-            </Link>
-          </li>
 
           <li>
-            <Link
-              to="/projetos"
+            <a
+              onClick={() => {
+                  document.getElementById("projetos")?.scrollIntoView({
+                    behavior: "smooth",
+                  })
+              }}
               className="bg-violet-700 text-white px-3 py-1 rounded-sm font-semibold hover:bg-white hover:text-violet-700 transition-all"
             >
               Projetos
-            </Link>
+            </a>
           </li>
 
           <li>
-            <Link
-              to="/sobre"
+            <a
+              onClick={() => {
+                  document.getElementById("contato")?.scrollIntoView({
+                    behavior: "smooth",
+                  })
+              }}
               className="bg-violet-700 text-white px-3 py-1 rounded-sm font-semibold hover:bg-white hover:text-violet-700 transition-all"
             >
-              Sobre
-            </Link>
+              Contato
+            </a>
           </li>
         </ul>
 
@@ -82,7 +82,7 @@ export default function Navbar() {
 
       {/* Mobile */}
       <div className="flex items-center gap-3 md:hidden">
-        <button
+        <button        
           onClick={toggleTheme}
           className={`relative flex h-8 w-16 items-center rounded-full transition-all duration-300 ${
             theme === "dark" ? "bg-violet-600" : "bg-violet-200"
