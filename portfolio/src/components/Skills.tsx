@@ -145,7 +145,7 @@ export default function Skills() {
         relative
         overflow-hidden
       ">
-        <h3 className="text-2xl text-center font-bold text-shadow-2xl text-foreground text-violet-100 mb-5">
+        <h3 className="text-2xl text-center font-bold text-shadow-2xl text-foreground mb-5">
             Programming
         </h3>
 
